@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,24 +8,148 @@
     <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+    <script src="content/ueditor1_4_3-utf8-net/ueditor.config.js"></script>
+    <script src="content/ueditor1_4_3-utf8-net/lang/zh-cn/zh-cn.js"></script>
+    <script src="content/ueditor1_4_3-utf8-net/ueditor.all.min.js"></script>
     <title>回复列表</title>
 </head>
+
 <body>
     <div id="app">
         <div class="send">
             <el-button type="primary">发帖</el-button>
+        </div>
+        <div>
+            <div class="post-title">
+                <div class="title-left">
+                    查看:1005 | 回复:996
+                </div>
+                <div class="title-right">
+                    这是帖子标题
+                </div>
+            </div>
+            <ul class="reply-list">
+                <li class="content-item">
+                    <div class="content-item-left">
+                        <div class="user-no">
+                            234235235
+                        </div>
+                        <div class="user-info">
+                            <img src="images/user-head.jpg" alt="user-head">
+                            <p>黑呆我老婆</p>
+                            <p>等级：12</p>
+                        </div>
+                    </div>
+                    <div class="content-item-right">
+                        <div class="send-time">
+                            发表于 <span>2021-3-23 10:40</span>
+                        </div>
+                        <div class="content-detail">
+                            这是回复内容
+                        </div>
+                        <div class="content-foot">
+                            <span>回复</span>
+                            <span>顶(2)</span>
+                            <span>踩(0)</span>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="reply-pageindex">
             <el-pagination background layout="prev, pager, next" :page-size="20" :total="1000">
             </el-pagination>
         </div>
-        <div class="reply-list">
-            
+        <div class="writepad">
+            <div id="editor"></div>
+            <p><el-button type="primary">发送</el-button></p>
         </div>
     </div>
 </body>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        font-size: 14px;
+    }
+
+    .reply-list {
+        list-style-type: none;
+        border: 1px solid pink;
+    }
+
+    .reply-list li {
+        margin-bottom: 10px;
+        border-top: 1px solid pink;
+    }
+
+    #app {
+        padding: 0 20px;
+    }
+
+    .reply-pageindex {
+        margin-top: 10px;
+        text-align: right;
+        clear: both;
+    }
+
+    .post-title {
+        height: 40px;
+        line-height: 40px;
+        margin-top: 20px;
+        background-color: aliceblue;
+        border: 1px solid pink;
+        border-bottom: none;
+    }
+
+    .title-left {
+        float: left;
+        width: 200px;
+    }
+
+    .content-item-left {
+        text-align: center;
+        background-color: aliceblue;
+        width: 200px;
+        float: left;
+        clear: both;
+    }
+
+    .user-no {
+        border-bottom: 1px dashed black;
+    }
+
+    .user-info img {
+        width: 150px;
+    }
+
+    .content-item-right {
+        overflow: hidden;
+        padding-left: 10px;
+    }
+
+    .content-detail {
+        padding-top: 10px;
+        min-height: 180px;
+    }
+
+    #editor {
+        margin-top: 10px;
+    }
+</style>
+
 </html>
 
 <script>
     var vm = new Vue({
-        el: '#app'
+        el: '#app',
+        mounted() {
+            var ue = UE.getEditor('editor', {
+                initialFrameWidth: '100%'
+            });
+        }
     });
 </script>
