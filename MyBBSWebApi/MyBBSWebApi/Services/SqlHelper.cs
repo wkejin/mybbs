@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 
 namespace MyBBSWebApi
 {
-    public class SqlHelper
+    public static class SqlHelper
     {
-        public string ConStr { get; } = "Server=localhost;Database=MyBBS;Trusted_Connection=True;";
+        public static string ConStr { get; } = "Server=localhost;Database=MyBBS;Trusted_Connection=True;";
 
-        private SqlConnection connection;
+        private static SqlConnection connection;
 
         /// <summary>
         /// 执行sql语句并返回DataTable
@@ -19,7 +19,7 @@ namespace MyBBSWebApi
         /// <param name="sqlStr">sql查询字符串</param>
         /// <param name="parameters">参数</param>
         /// <returns></returns>
-        public DataTable ExecuteToTable(string sqlStr, params SqlParameter[] parameters)
+        public static DataTable ExecuteToTable(string sqlStr, params SqlParameter[] parameters)
         {
             using(connection = new SqlConnection(ConStr))
             {
@@ -40,12 +40,13 @@ namespace MyBBSWebApi
         /// <param name="sqlStr">sql查询字符串</param>
         /// <param name="parameters">参数</param>
         /// <returns></returns>
-        public int ExecuteNonQuery(string sqlStr, params SqlParameter[] parameters)
+        public static int ExecuteNonQuery(string sqlStr, params SqlParameter[] parameters)
         {
             using(connection = new SqlConnection(ConStr))
             {
                 using(SqlCommand cmd = new SqlCommand(sqlStr, connection))
                 {
+                    connection.Open();
                     cmd.Parameters.AddRange(parameters);
                     return cmd.ExecuteNonQuery();
                 }
@@ -58,12 +59,13 @@ namespace MyBBSWebApi
         /// <param name="sqlStr">sql查询字符串</param>
         /// <param name="parameters">参数</param>
         /// <returns></returns>
-        public object ExecuteScalar(string sqlStr, params SqlParameter[] parameters)
+        public static object ExecuteScalar(string sqlStr, params SqlParameter[] parameters)
         {
             using(connection = new SqlConnection(ConStr))
             {
                 using(SqlCommand cmd = new SqlCommand(sqlStr, connection))
                 {
+                    connection.Open();
                     cmd.Parameters.AddRange(parameters);
                     return cmd.ExecuteScalar();
                 }

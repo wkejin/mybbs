@@ -30,7 +30,6 @@ C:\Users\Emiya\Desktop\mybbs\MyBBSWebApi\MyBBSWebApi\bin\Debug\net5.0\runtimes\w
 C:\Users\Emiya\Desktop\mybbs\MyBBSWebApi\MyBBSWebApi\bin\Debug\net5.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
 C:\Users\Emiya\Desktop\mybbs\MyBBSWebApi\MyBBSWebApi\bin\Debug\net5.0\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
 C:\Users\Emiya\Desktop\mybbs\MyBBSWebApi\MyBBSWebApi\bin\Debug\net5.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
-C:\Users\Emiya\Desktop\mybbs\MyBBSWebApi\MyBBSWebApi\obj\Debug\net5.0\MyBBSWebApi.csprojAssemblyReference.cache
 C:\Users\Emiya\Desktop\mybbs\MyBBSWebApi\MyBBSWebApi\obj\Debug\net5.0\MyBBSWebApi.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\Emiya\Desktop\mybbs\MyBBSWebApi\MyBBSWebApi\obj\Debug\net5.0\MyBBSWebApi.AssemblyInfoInputs.cache
 C:\Users\Emiya\Desktop\mybbs\MyBBSWebApi\MyBBSWebApi\obj\Debug\net5.0\MyBBSWebApi.AssemblyInfo.cs
@@ -46,3 +45,4 @@ C:\Users\Emiya\Desktop\mybbs\MyBBSWebApi\MyBBSWebApi\obj\Debug\net5.0\MyBBSWebAp
 C:\Users\Emiya\Desktop\mybbs\MyBBSWebApi\MyBBSWebApi\obj\Debug\net5.0\ref\MyBBSWebApi.dll
 C:\Users\Emiya\Desktop\mybbs\MyBBSWebApi\MyBBSWebApi\obj\Debug\net5.0\MyBBSWebApi.pdb
 C:\Users\Emiya\Desktop\mybbs\MyBBSWebApi\MyBBSWebApi\obj\Debug\net5.0\MyBBSWebApi.genruntimeconfig.cache
+C:\Users\Emiya\Desktop\mybbs\MyBBSWebApi\MyBBSWebApi\obj\Debug\net5.0\MyBBSWebApi.csprojAssemblyReference.cache
